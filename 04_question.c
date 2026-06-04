@@ -1,12 +1,24 @@
 #include <stdio.h>
-int main() {
- int a, b, lcm;
- printf("Enter two numbers: ");
+int main()
+{
+ int a, b, c, d, e;
+ printf("Enter two numbers");
  scanf("%d %d", &a, &b);
- lcm = a > b ? a : b;
- while (lcm % a != 0 || lcm % b != 0) {
- lcm++;
+ printf("Armstrong numbers are\n");
+ for (c = a; c <= b; c++)
+ {
+ d = c;
+ e = 0;
+ while (d > 0)
+ {
+ int digit = d % 10;
+ e = e + (digit * digit * digit);
+ d = d / 10;
  }
-printf("LCM = %d", lcm);
-return 0;
+ if (e == c)
+  {
+   printf("%d ", c);
+ }
+ }
+ return 0;
 }
